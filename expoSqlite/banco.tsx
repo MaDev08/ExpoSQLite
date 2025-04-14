@@ -29,7 +29,7 @@ const Banco = () => {
         }
     };
 
-    //Cria uma função para o SELECT faz um botão e chama a função
+    //Cria uma função para o SELECT faz um botão e chama a função, para ler os dados
     async function inserirDados() {
         try {
             let db = await criaDatabase();
