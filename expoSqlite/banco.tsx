@@ -29,7 +29,8 @@ const Banco = () => {
         }
     };
 
-    async function InserirDados() {
+    //Cria uma função para o SELECT faz um botão e chama a função
+    async function inserirDados() {
         try {
             let db = await criaDatabase();
             await db.execAsync(`INSERT INTO tb_usuario (id, nome) VALUES (1, 'Zeca');`);
@@ -49,7 +50,7 @@ const Banco = () => {
                 title='Criar Tabela' onPress={() => { criaTabela() }}>
             </Button>
             <Button
-                title='Inserir dados' onPress={() => { InserirDados() }}>
+                title='Inserir dados' onPress={() => { inserirDados() }}>
             </Button>
         </View>
     );
