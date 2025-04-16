@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View } from 'react-native';
+import { Button, View, StyleSheet} from 'react-native';
 import * as SQLite from 'expo-sqlite';
 
 
@@ -43,17 +43,23 @@ const Banco = () => {
 
 
 
+
     return (
-        <View>
-            <Button title="botão" onPress={() => criaDatabase()} />
-            <Button
-                title='Criar Tabela' onPress={() => { criaTabela() }}>
-            </Button>
-            <Button
-                title='Inserir dados' onPress={() => { inserirDados() }}>
-            </Button>
+        <View style={styles.container}>
+            <Button title="Open Database" onPress={criaDatabase} />
+            <Button title="Create Table" onPress={criaTabela} />
+            <Button title="Insert Data" onPress={inserirDados} />
         </View>
     );
-}
+};
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 10,
+    },
+});
 export default Banco; 
